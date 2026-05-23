@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Court File Indexer — AI Legal Intelligence</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#F5C842">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -1253,6 +1255,253 @@ footer{
 .footer-extra-links a:hover {
   color: var(--black);
 }
+
+/* PWA HEADER BUTTON */
+.pwa-header-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--yellow);
+  border: 2px solid #1A1A1A;
+  box-shadow: 2px 2px 0 #1A1A1A;
+  color: var(--black);
+  padding: 0.35rem 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.pwa-header-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #1A1A1A;
+}
+.pwa-header-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #1A1A1A;
+}
+
+/* PWA MODAL & TOAST NEOBRUTALIST STYLES */
+.pwa-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.pwa-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.pwa-modal-content {
+  background: var(--cream);
+  border: 4px solid #1A1A1A;
+  box-shadow: 10px 10px 0 #1A1A1A;
+  width: 90%;
+  max-width: 440px;
+  padding: 2.2rem;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
+.pwa-close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none; border: none;
+  font-size: 1.8rem; font-weight: 700;
+  cursor: pointer; color: var(--black);
+}
+.pwa-preview-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.pwa-preview-logo-wrapper {
+  position: relative;
+  padding: 10px;
+}
+.pwa-pulse-ring {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 3px solid var(--yellow);
+  border-radius: 50%;
+  animation: pulse-grow 2s infinite ease-out;
+}
+@keyframes pulse-grow {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+.pwa-title {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+  color: var(--black);
+}
+.pwa-tagline {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+.pwa-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+.pwa-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+  margin-bottom: 1.8rem;
+}
+.pwa-feature-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+.pwa-feature-icon {
+  font-size: 1.2rem;
+}
+.pwa-feature-text {
+  display: flex;
+  flex-direction: column;
+}
+.pwa-feature-text strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--black);
+}
+.pwa-feature-text span {
+  font-size: 0.75rem;
+  color: #666;
+}
+.pwa-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn-pwa-install {
+  flex: 1;
+  background: var(--yellow);
+  border: 3px solid #1A1A1A;
+  box-shadow: 4px 4px 0 #1A1A1A;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-pwa-install:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #1A1A1A;
+}
+.btn-pwa-cancel {
+  flex: 1;
+  background: #FFF;
+  border: 3px solid #1A1A1A;
+  box-shadow: 4px 4px 0 #1A1A1A;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn-pwa-cancel:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #1A1A1A;
+}
+
+/* PWA FLOATING TOAST */
+.pwa-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--cream);
+  border: 3px solid #1A1A1A;
+  box-shadow: 6px 6px 0 #1A1A1A;
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  width: 90%;
+  max-width: 380px;
+  box-sizing: border-box;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.pwa-toast.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.pwa-toast-icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.pwa-toast-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.pwa-toast-title {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--black);
+}
+.pwa-toast-desc {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+.pwa-toast-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+.btn-toast-install {
+  background: var(--yellow);
+  border: 2px solid #1A1A1A;
+  box-shadow: 2px 2px 0 #1A1A1A;
+  padding: 0.25rem 0.6rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-toast-dismiss {
+  background: #FFF;
+  border: 2px solid #1A1A1A;
+  box-shadow: 2px 2px 0 #1A1A1A;
+  padding: 0.25rem 0.6rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -1271,6 +1520,14 @@ footer{
     <li><a href="#chatbot-retrieval">Chatbot</a></li>
     <li><a href="#tech">Stack</a></li>
   </ul>
+  <button id="pwaHeaderBtn" class="pwa-header-btn" onclick="openPwaModal()" style="display: none;" title="Install App">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+    <span>Install</span>
+  </button>
   <div class="nav-status-badge">
     <span class="status-dot"></span>
     Live
@@ -2472,5 +2729,69 @@ chatObs.observe(document.getElementById('chatbot-retrieval'));
   window.addEventListener('resize', highlightNavOnScroll);
   highlightNavOnScroll();
 </script>
+
+<!-- PWA INSTALLATION MODAL -->
+<div class="pwa-modal-overlay" id="pwaModalOverlay">
+  <div class="pwa-modal-content">
+    <button class="pwa-close-btn" onclick="closePwaModal()">&times;</button>
+    <div class="pwa-hero-glow"></div>
+    <div class="pwa-preview-container">
+      <div class="pwa-preview-logo-wrapper">
+        <svg viewBox="0 0 512 512" class="pwa-preview-logo" style="width:72px;height:72px;display:block;"><rect x="16" y="16" width="480" height="480" rx="32" fill="#F5C842" stroke="#1A1A1A" stroke-width="16"/><rect x="32" y="32" width="448" height="448" rx="24" fill="#FDF6ED" stroke="#1A1A1A" stroke-width="12"/><path d="M192 416h128v24H192z" fill="#1A1A1A"/><rect x="236" y="380" width="40" height="36" rx="4" fill="#A5C9FF" stroke="#1A1A1A" stroke-width="8"/><line x1="256" y1="130" x2="256" y2="380" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/><path d="M256 90l20 20-20 20-20-20z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="8"/><line x1="120" y1="170" x2="392" y2="170" stroke="#1A1A1A" stroke-width="18" stroke-linecap="round"/><line x1="120" y1="170" x2="80" y2="280" stroke="#1A1A1A" stroke-width="6"/><line x1="120" y1="170" x2="160" y2="280" stroke="#1A1A1A" stroke-width="6"/><path d="M60 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/><line x1="392" y1="170" x2="352" y2="280" stroke="#1A1A1A" stroke-width="6"/><line x1="392" y1="170" x2="432" y2="280" stroke="#1A1A1A" stroke-width="6"/><path d="M332 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/></svg>
+        <div class="pwa-pulse-ring"></div>
+      </div>
+    </div>
+    <h2 class="pwa-title">Install Court File Indexer</h2>
+    <p class="pwa-tagline">AI-Powered Legal Search &amp; OCR</p>
+    <p class="pwa-desc">Install Court File Indexer as a native app for ultra-fast, local sandboxed access to our advanced legal indexing pipeline directly from your desktop or home screen.</p>
+    
+    <div class="pwa-features">
+      <div class="pwa-feature-item">
+        <span class="pwa-feature-icon">⚡</span>
+        <div class="pwa-feature-text">
+          <strong>Sub-Second Launch</strong>
+          <span>Zero loading delay or external network roundtrips</span>
+        </div>
+      </div>
+      <div class="pwa-feature-item">
+        <span class="pwa-feature-icon">🛡️</span>
+        <div class="pwa-feature-text">
+          <strong>Local Processing Sandbox</strong>
+          <span>Completely isolated local browser database caching</span>
+        </div>
+      </div>
+      <div class="pwa-feature-item">
+        <span class="pwa-feature-icon">💻</span>
+        <div class="pwa-feature-text">
+          <strong>Native Dock Integration</strong>
+          <span>Launches in standalone fullscreen window like a native desktop app</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pwa-actions">
+      <button class="btn-pwa-install" id="modalInstallBtn" onclick="triggerPwaInstall()">Install App</button>
+      <button class="btn-pwa-cancel" onclick="closePwaModal()">Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+<!-- PWA FLOATING TOAST -->
+<div class="pwa-toast" id="pwaInstallToast">
+  <div class="pwa-toast-icon-wrap">
+    <svg viewBox="0 0 512 512" class="pwa-toast-logo" style="width:36px;height:36px;display:block;"><rect x="16" y="16" width="480" height="480" rx="32" fill="#F5C842" stroke="#1A1A1A" stroke-width="16"/><rect x="32" y="32" width="448" height="448" rx="24" fill="#FDF6ED" stroke="#1A1A1A" stroke-width="12"/><path d="M192 416h128v24H192z" fill="#1A1A1A"/><rect x="236" y="380" width="40" height="36" rx="4" fill="#A5C9FF" stroke="#1A1A1A" stroke-width="8"/><line x1="256" y1="130" x2="256" y2="380" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/><path d="M256 90l20 20-20 20-20-20z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="8"/><line x1="120" y1="170" x2="392" y2="170" stroke="#1A1A1A" stroke-width="18" stroke-linecap="round"/><line x1="120" y1="170" x2="80" y2="280" stroke="#1A1A1A" stroke-width="6"/><line x1="120" y1="170" x2="160" y2="280" stroke="#1A1A1A" stroke-width="6"/><path d="M60 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/><line x1="392" y1="170" x2="352" y2="280" stroke="#1A1A1A" stroke-width="6"/><line x1="392" y1="170" x2="432" y2="280" stroke="#1A1A1A" stroke-width="6"/><path d="M332 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="pwa-toast-body">
+    <div class="pwa-toast-title">Install Court File Indexer</div>
+    <div class="pwa-toast-desc">Add Court File Indexer to your desktop or home screen for instant standalone access.</div>
+    <div class="pwa-toast-actions">
+      <button class="btn-toast-install" onclick="openPwaModal()">Install</button>
+      <button class="btn-toast-dismiss" onclick="dismissPwaToast()">Dismiss</button>
+    </div>
+  </div>
+</div>
+
+<!-- PWA Lifecycle Script -->
+<script src="pwa.js"></script>
 </body>
 </html>
