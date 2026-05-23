@@ -1,34 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
-  <!-- Solid background block -->
-  <rect x="16" y="16" width="480" height="480" rx="32" fill="#F5C842" stroke="#1A1A1A" stroke-width="16"/>
-  <!-- Shadow offset effect -->
-  <rect x="32" y="32" width="448" height="448" rx="24" fill="#FDF6ED" stroke="#1A1A1A" stroke-width="12"/>
+  <!-- Solid background to prevent empty edges in PWA circular/maskable crops -->
+  <rect width="512" height="512" fill="#F5C842"/>
   
-  <!-- Scales of Justice Vector -->
-  <!-- Base -->
-  <path d="M192 416h128v24H192z" fill="#1A1A1A"/>
-  <rect x="236" y="380" width="40" height="36" rx="4" fill="#A5C9FF" stroke="#1A1A1A" stroke-width="8"/>
-  
-  <!-- Central Pillar -->
-  <line x1="256" y1="130" x2="256" y2="380" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/>
-  
-  <!-- Decorative top diamond -->
-  <path d="M256 90l20 20-20 20-20-20z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="8"/>
-  
-  <!-- Crossbeam (Horizontal arm) -->
-  <line x1="120" y1="170" x2="392" y2="170" stroke="#1A1A1A" stroke-width="18" stroke-linecap="round"/>
-  
-  <!-- Scale 1 (Left) -->
-  <!-- Hanging cords -->
-  <line x1="120" y1="170" x2="80" y2="280" stroke="#1A1A1A" stroke-width="6"/>
-  <line x1="120" y1="170" x2="160" y2="280" stroke="#1A1A1A" stroke-width="6"/>
-  <!-- Left Pan -->
-  <path d="M60 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/>
-  
-  <!-- Scale 2 (Right) -->
-  <!-- Hanging cords -->
-  <line x1="392" y1="170" x2="352" y2="280" stroke="#1A1A1A" stroke-width="6"/>
-  <line x1="392" y1="170" x2="432" y2="280" stroke="#1A1A1A" stroke-width="6"/>
-  <!-- Right Pan -->
-  <path d="M332 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/>
+  <!-- Scaled down and centered group to fit perfectly inside the circular safe zone -->
+  <g transform="translate(76.8, 76.8) scale(0.70)">
+    <!-- Solid background block -->
+    <rect x="16" y="16" width="480" height="480" rx="32" fill="#F5C842" stroke="#1A1A1A" stroke-width="16"/>
+    <!-- Shadow offset effect -->
+    <rect x="32" y="32" width="448" height="448" rx="24" fill="#FDF6ED" stroke="#1A1A1A" stroke-width="12"/>
+    
+    <!-- Scales of Justice Vector -->
+    <!-- Base -->
+    <path d="M192 416h128v24H192z" fill="#1A1A1A"/>
+    <rect x="236" y="380" width="40" height="36" rx="4" fill="#A5C9FF" stroke="#1A1A1A" stroke-width="8"/>
+    
+    <!-- Central Pillar -->
+    <line x1="256" y1="130" x2="256" y2="380" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/>
+    
+    <!-- Decorative top diamond -->
+    <path d="M256 90l20 20-20 20-20-20z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="8"/>
+    
+    <!-- Crossbeam (Horizontal arm) -->
+    <line x1="120" y1="170" x2="392" y2="170" stroke="#1A1A1A" stroke-width="18" stroke-linecap="round"/>
+    
+    <!-- Scale 1 (Left) -->
+    <!-- Hanging cords -->
+    <line x1="120" y1="170" x2="80" y2="280" stroke="#1A1A1A" stroke-width="6"/>
+    <line x1="120" y1="170" x2="160" y2="280" stroke="#1A1A1A" stroke-width="6"/>
+    <!-- Left Pan -->
+    <path d="M60 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/>
+    
+    <!-- Scale 2 (Right) -->
+    <!-- Hanging cords -->
+    <line x1="392" y1="170" x2="352" y2="280" stroke="#1A1A1A" stroke-width="6"/>
+    <line x1="392" y1="170" x2="432" y2="280" stroke="#1A1A1A" stroke-width="6"/>
+    <!-- Right Pan -->
+    <path d="M332 280h120c0 30-27 50-60 50s-60-20-60-50z" fill="#FF9EAE" stroke="#1A1A1A" stroke-width="10" stroke-linejoin="round"/>
+  </g>
 </svg>
