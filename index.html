@@ -2795,7 +2795,7 @@ function appendBotResponse(text, callback) {
         if (word.includes("[Page")) {
           const cleanWord = word.replace(/[\[\]]/g, "");
           const pageNum = cleanWord.match(/Page\s*(\d+\-?\d*)/)?.[1] || "Sheet";
-          word = `<span class="citation-badge" onclick="alert('Viewing high-accuracy semantic slice for Page ${pageNum}...')">Page ${pageNum}</span>`;
+          word = `<span class="citation-badge" onclick="console.log('Viewing high-accuracy semantic slice for Page ${pageNum}...')">Page ${pageNum}</span>`;
         }
         
         target.innerHTML += (wordIdx === 1 ? "" : " ") + word;
@@ -2843,10 +2843,11 @@ chatObs.observe(document.getElementById('chatbot-retrieval'));
 <!-- Lenis Smooth Scrolling CDN -->
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script>
-  // Initialize Lenis
-  const lenis = new Lenis({
+  // Initialize Lenis globally so PWA manager can control scrolling
+  window.lenis = new Lenis({
     autoRaf: true
   });
+  const lenis = window.lenis;
 
   // Smooth scroll links through Lenis
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
