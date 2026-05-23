@@ -605,37 +605,102 @@ nav{
 }
 
 /* TECH */
-.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--border)}
-.tech-card{
-  padding:1.8rem;border-right:var(--border);border-bottom:var(--border);
-  opacity:0;transform:translateY(12px);transition:opacity 0.4s,transform 0.4s;
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  border: none !important;
+}
+.tech-card {
+  padding: 2.2rem 1.8rem;
+  border: 3.5px solid #1A1A1A !important;
+  box-shadow: 6px 6px 0 #1A1A1A !important;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s !important;
   will-change: opacity, transform;
+  position: relative;
+  background-image: radial-gradient(rgba(26,26,26,0.1) 1px, transparent 0) !important;
+  background-size: 16px 16px !important;
 }
-.tech-card.visible{opacity:1;transform:none}
-.tech-card:nth-child(3n){border-right:none}
-.tech-cat{
-  font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  background:var(--black);color:var(--cream);
-  padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem;
+.tech-card.visible {
+  opacity: 1;
+  transform: none;
 }
-.tech-items{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
-.tech-item-row{
-  display:flex;align-items:center;gap:0.8rem;
-  background:var(--cream);border:2px solid #1A1A1A;
-  box-shadow:3px 3px 0 #1A1A1A;padding:0.6rem 0.8rem;
-  transition:transform 0.1s,box-shadow 0.1s;
+.tech-card:hover {
+  transform: translateY(-4px) rotate(-0.5deg) !important;
+  box-shadow: 10px 10px 0 #1A1A1A !important;
 }
-.tech-item-row:hover{
-  transform:translate(-2px,-2px);box-shadow:5px 5px 0 #1A1A1A;
-  background:#FFF;
+.tech-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: #1A1A1A !important;
+  color: #FFF !important;
+  border: 2.5px solid #1A1A1A;
+  padding: 0.4rem 1.1rem;
+  display: inline-block;
+  margin-bottom: 1.6rem;
+  box-shadow: 3.5px 3.5px 0 var(--black);
+  position: relative;
+  top: -8px;
 }
-.tech-logo-wrap{
-  width:32px;height:32px;background:var(--yellow);border:2px solid #1A1A1A;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+.tech-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
-.tech-info-wrap{display:flex;flex-direction:column;gap:0.1rem;text-align:left}
-.tech-item-name{font-family:'Space Mono',monospace;font-size:0.78rem;font-weight:700;color:var(--black)}
-.tech-item-desc{font-family:'Space Grotesk',sans-serif;font-size:0.68rem;color:#555;line-height:1.2}
+.tech-item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #FFFFFF !important;
+  border: 2.5px solid #1A1A1A !important;
+  box-shadow: 3.5px 3.5px 0 #1A1A1A !important;
+  padding: 0.7rem 0.9rem;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.tech-item-row:hover {
+  transform: translate(-3px, -3px) rotate(0.5deg);
+  box-shadow: 6px 6px 0 #1A1A1A !important;
+  background: var(--cream) !important;
+}
+.tech-logo-wrap {
+  width: 32px;
+  height: 32px;
+  background: var(--cream) !important;
+  border: 2.2px solid #1A1A1A !important;
+  box-shadow: 2px 2px 0 #1A1A1A !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+.tech-item-row:hover .tech-logo-wrap {
+  background-color: var(--yellow) !important;
+}
+.tech-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+.tech-item-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--black);
+}
+.tech-item-desc {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  color: #555;
+  line-height: 1.2;
+}
 
 /* PRIZES */
 .prizes-bg{background:var(--pink);border-top:var(--border);border-bottom:var(--border)}
@@ -793,9 +858,10 @@ footer{
   }
 
   .stages-row{grid-template-columns:1fr 1fr}
-  .tech-grid{grid-template-columns:1fr 1fr}
-  .tech-card:nth-child(2n){border-right:none}
-  .tech-card:nth-child(3n){border-right:var(--border)}
+  .tech-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.6rem !important;
+  }
   
   .perf-row{grid-template-columns:1fr;gap:0.5rem}
   .modes-row{grid-template-columns:1fr}
@@ -844,14 +910,11 @@ footer{
   }
   .tech-grid {
     grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
   .tech-card {
-    border-right: var(--border) !important;
-    border-bottom: var(--border) !important;
+    border: 3.5px solid #1A1A1A !important;
     padding: 1.5rem 1.2rem !important;
-  }
-  .tech-card:last-child {
-    border-bottom: none !important;
   }
 }
 
@@ -1713,10 +1776,10 @@ footer{
 <div class="disclaimer-marquee">
   <div class="disclaimer-marquee-track">
     <div class="disclaimer-marquee-content">
-      <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div class="disclaimer-marquee-content">
-      <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>NOTICE:</strong> DEMO DATA ONLY · 🔒 CORE ENGINE &amp; PROPRIETARY BACKEND CONCEALED FOR CONFIDENTIALITY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <svg viewBox="0 0 24 24" width="16" height="16" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-top:-2px" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#F5C842"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3" stroke-linecap="round"/></svg><strong>DISCLAIMER:</strong> ALL PIPELINE DATA IS FICTIONAL &amp; FOR DEMO ONLY · NOT REAL LEGAL RECORDS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
   </div>
 </div>
