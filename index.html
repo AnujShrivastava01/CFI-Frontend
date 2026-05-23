@@ -504,7 +504,10 @@ nav{
 }
 .term-dot{width:10px;height:10px;border-radius:50%}
 .term-title{font-family:'Space Mono',monospace;font-size:0.65rem;color:#888;letter-spacing:0.1em;margin-left:0.5rem}
-.term-body{padding:1.2rem 1.5rem;font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.8}
+.term-body{padding:1.2rem 1.5rem;font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.8;height:380px;overflow-y:auto}
+.term-body::-webkit-scrollbar{width:8px}
+.term-body::-webkit-scrollbar-track{background:#1A1A1A}
+.term-body::-webkit-scrollbar-thumb{background:var(--yellow);border:2px solid #1A1A1A}
 .t-time{color:#666}
 .t-info{color:#7DD8C6}
 .t-warn{color:#F5C842}
