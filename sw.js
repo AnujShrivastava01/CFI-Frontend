@@ -1,9 +1,10 @@
-const CACHE_NAME = 'cfi-pwa-v4';
+const CACHE_NAME = 'cfi-pwa-v5';
 const ASSETS = [
   './',
   './index.html',
   './pwa.js',
   './logo.svg',
+  './logo.png',
   './manifest.json',
   'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap',
   'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js'
