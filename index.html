@@ -103,6 +103,11 @@ nav{
   box-shadow: 0 4px 12px rgba(14, 112, 84, 0.12);
   transform: translateY(-1px);
 }
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 .status-dot {
   width: 9px;
   height: 9px;
@@ -714,6 +719,9 @@ footer{
   }
   .pwa-header-btn span {
     display: none !important;
+  }
+  .nav-right-actions {
+    gap: 0.4rem !important;
   }
   .pwa-header-btn {
     padding: 0.35rem 0.5rem !important;
@@ -1531,17 +1539,19 @@ footer{
     <li><a href="#chatbot-retrieval">Chatbot</a></li>
     <li><a href="#tech">Stack</a></li>
   </ul>
-  <button id="pwaHeaderBtn" class="pwa-header-btn" onclick="openPwaModal()" style="display: none;" title="Install App">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-      <polyline points="7 10 12 15 17 10"></polyline>
-      <line x1="12" y1="15" x2="12" y2="3"></line>
-    </svg>
-    <span>Install</span>
-  </button>
-  <div class="nav-status-badge">
-    <span class="status-dot"></span>
-    Live
+  <div class="nav-right-actions">
+    <button id="pwaHeaderBtn" class="pwa-header-btn" onclick="openPwaModal()" style="display: none;" title="Install App">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span>Install</span>
+    </button>
+    <div class="nav-status-badge">
+      <span class="status-dot"></span>
+      Live
+    </div>
   </div>
 </nav>
 
