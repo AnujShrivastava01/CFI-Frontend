@@ -61,7 +61,6 @@ window.addEventListener('appinstalled', (evt) => {
   console.log('[PWA] Court File Indexer successfully installed!');
   hideInstallUI();
   deferredPrompt = null;
-  alert('Court File Indexer is now installed as a desktop application!');
 });
 
 function initPwaUI() {
@@ -85,6 +84,7 @@ function hideInstallUI() {
   const modal = document.getElementById('pwaModalOverlay');
   if (modal) modal.classList.remove('active');
   
+  document.body.style.overflow = '';
   if (window.lenis) window.lenis.start();
 }
 
@@ -122,7 +122,6 @@ function dismissPwaToast() {
 async function triggerPwaInstall() {
   if (!deferredPrompt) {
     console.log('[PWA] Install prompt was not deferred or already installed.');
-    alert('App is already installed or your browser does not support local installation.');
     closePwaModal();
     return;
   }
