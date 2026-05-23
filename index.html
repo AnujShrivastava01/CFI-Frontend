@@ -385,7 +385,9 @@ nav{
   transition: all 0.2s ease;
 }
 .extracted-table-container {
-  min-height: 140px;
+  height: 190px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .extracted-table {
   width: 100%;
@@ -723,7 +725,7 @@ footer{
     margin: 0.4rem 0;
   }
   .extracted-table-container {
-    min-height: 110px;
+    height: 190px;
   }
 }
 
@@ -1095,14 +1097,37 @@ footer{
 }
 .footer-top-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 3rem;
   margin-bottom: 2.5rem;
 }
+.footer-navs-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
 @media (max-width: 860px) {
   .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem;
+  }
+  .footer-navs-wrap {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .footer-navs-wrap {
+    gap: 0.5rem !important;
+  }
+  .footer-nav-col {
+    gap: 0.8rem !important;
+  }
+  .footer-col-title {
+    font-size: 0.72rem !important;
+  }
+  .footer-links a {
+    font-size: 0.75rem !important;
   }
 }
 .footer-brand-col {
@@ -2351,34 +2376,36 @@ footer{
         </div>
       </div>
       
-      <!-- Column 2: Sections -->
-      <div class="footer-nav-col">
-        <div class="footer-col-title">Sections</div>
-        <ul class="footer-links">
-          <li><a href="#challenge">Challenge</a></li>
-          <li><a href="#pipeline">Pipeline</a></li>
-          <li><a href="#performance">Benchmarks</a></li>
-        </ul>
-      </div>
-      
-      <!-- Column 3: Capabilities -->
-      <div class="footer-nav-col">
-        <div class="footer-col-title">Capabilities</div>
-        <ul class="footer-links">
-          <li><a href="#chatbot-retrieval">RAG Assistant</a></li>
-          <li><a href="#performance-boost">Performance</a></li>
-          <li><a href="#tech">Tech Stack</a></li>
-        </ul>
-      </div>
-      
-      <!-- Column 4: Legal -->
-      <div class="footer-nav-col">
-        <div class="footer-col-title">Legal</div>
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Disclaimer</a></li>
-        </ul>
+      <div class="footer-navs-wrap">
+        <!-- Column 2: Sections -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Sections</div>
+          <ul class="footer-links">
+            <li><a href="#challenge">Challenge</a></li>
+            <li><a href="#pipeline">Pipeline</a></li>
+            <li><a href="#performance">Benchmarks</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: Capabilities -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Capabilities</div>
+          <ul class="footer-links">
+            <li><a href="#chatbot-retrieval">RAG Assistant</a></li>
+            <li><a href="#performance-boost">Performance</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 4: Legal -->
+        <div class="footer-nav-col">
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     
