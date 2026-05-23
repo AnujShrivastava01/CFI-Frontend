@@ -618,11 +618,17 @@ nav{
 }
 .comparison-table {
   width: 100%;
-  min-width: 720px;
   border-collapse: collapse;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-align: left;
+  table-layout: fixed;
+}
+.table-subtext {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  display: block;
+  margin-top: 0.2rem;
 }
 .comparison-table th {
   background: var(--yellow);
@@ -967,6 +973,30 @@ footer{
   .perf-row{grid-template-columns:1fr;gap:0.5rem}
   .modes-row{grid-template-columns:1fr}
   .mode{border-right:none;border-bottom:var(--border)}
+  
+  /* RESPONSIVE COMPARISON TABLE */
+  .comparison-table-wrap {
+    overflow-x: hidden !important;
+  }
+  .comparison-table {
+    min-width: unset !important;
+    width: 100% !important;
+    font-size: 0.65rem !important;
+  }
+  .comparison-table th {
+    padding: 0.5rem 0.4rem !important;
+    font-size: 0.65rem !important;
+  }
+  .comparison-table td {
+    padding: 0.6rem 0.4rem !important;
+    font-size: 0.62rem !important;
+  }
+  .comparison-table .feature-col {
+    font-size: 0.62rem !important;
+  }
+  .table-subtext {
+    font-size: 0.55rem !important;
+  }
   
   .prize-row{grid-template-columns:1fr}
   .prize-card{
@@ -2143,36 +2173,36 @@ footer{
       <table class="comparison-table">
         <thead>
           <tr>
-            <th style="width: 20%">Dimension</th>
-            <th style="width: 40%">Fast Hybrid Mode (Paddle OCR + VLM)</th>
-            <th style="width: 40%">Pure VLM Mode (Full Visual Parse)</th>
+            <th style="width: 24%">Dimension</th>
+            <th style="width: 38%">Fast Hybrid Mode (Paddle + VLM)</th>
+            <th style="width: 38%">Pure VLM Mode (Full Visual Parse)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="feature-col">Pipeline Speed</td>
-            <td class="highlight-hybrid">⚡ ~2 – 3s / page (High-speed parallel OCR + surgical visual VLM)</td>
-            <td class="highlight-vlm">🐢 ~5 – 6s / page (Deep sequential visual LLM token mapping)</td>
+            <td class="highlight-hybrid">⚡ ~2 – 3s / page<br><span class="table-subtext">Parallel OCR + single VLM sheet call</span></td>
+            <td class="highlight-vlm">🐢 ~5 – 6s / page<br><span class="table-subtext">Sequential visual parse of all pages</span></td>
           </tr>
           <tr>
-            <td class="feature-col">GPU Resource Load</td>
-            <td><strong>1× Load</strong> — Visual model fires exactly once on the Index Sheet.</td>
-            <td><strong>15× Load</strong> — Visual model runs on every single page.</td>
+            <td class="feature-col">GPU Resource</td>
+            <td><strong>1× GPU Load</strong><br>VLM fires exactly once on the Index.</td>
+            <td><strong>15× GPU Load</strong><br>VLM runs on every single page.</td>
           </tr>
           <tr>
-            <td class="feature-col">Layout Versatility</td>
-            <td><strong>95% Accuracy</strong> — Ideal for standard printed bilingual pleadings.</td>
-            <td><strong>99% Accuracy</strong> — Masterfully handles stamps, handwriting, and rotations.</td>
+            <td class="feature-col">Layout Accuracy</td>
+            <td><strong>95% Accuracy</strong><br>Best for standard bilingual scans.</td>
+            <td><strong>99% Accuracy</strong><br>Handles bad stamps, seals & handwriting.</td>
           </tr>
           <tr>
-            <td class="feature-col">Execution Policy</td>
-            <td>Parallelized OCR detection + surgical VLM extraction fallback.</td>
-            <td>Zero OCR preprocessing. Direct image-to-JSON visual token mapping.</td>
+            <td class="feature-col">Execution</td>
+            <td>Parallel OCR + surgical VLM extraction fallback.</td>
+            <td>Direct visual image-to-JSON token mapping.</td>
           </tr>
           <tr>
-            <td class="feature-col">Primary Use Case</td>
-            <td>95% of standard legal petition files and annexures.</td>
-            <td>Low-confidence visual pages, heavily stamped transcripts, manual seals.</td>
+            <td class="feature-col">Primary Use</td>
+            <td>Standard legal petitions & index pages.</td>
+            <td>Low-confidence visual pages or bad scan qualities.</td>
           </tr>
         </tbody>
       </table>
